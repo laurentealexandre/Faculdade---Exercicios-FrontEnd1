@@ -1,0 +1,14 @@
+/* Crie uma função que recebe dois números inteiros e retorna true se o primeiro for múltiplo do segundo número ou false caso contrário. Altere somente a parte demarcada para isso.
+
+O usuário deve inserir os números de duas vezes. Ou seja, primeiro o número a ser testado. Depois o número que deve checar se é múltiplo.
+
+Seu código deve retornar apenas o booleano pedido. */
+
+function isMultipleOf(num, multiple) {
+  return num % multiple == 0; true
+}
+
+var num = prompt("Digite um número inteiro para ser testado");
+var multiple = prompt("Digite um número inteiro para checar se é múltiplo");
+console.log(isMultipleOf(num, multiple));
+

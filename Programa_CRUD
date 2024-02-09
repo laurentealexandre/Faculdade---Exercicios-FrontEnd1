@@ -1,0 +1,50 @@
+
+/* Crie um programa que recebe uma lista de comandos para manipular uma lista de nomes. O comando "1" deve inserir um nome na lista. Assim o usuário deve passar o comando e o nome a ser inserido. O comando "2" deve editar um nome existente. Assim o usuário deve passar o comando, o nome para alterar e o novo nome. O comando "3" deve deletar um nome existente na lista. A cada interação um comando deve ser executado, a lista de nomes deve ser impressa, e a mensagem de finalização de comando ("= = = = =") deve ser impressa em uma nova linha. Caso um comando não possa ser executado, apenas a lista de nomes e a mensagem deve ser impressa. No caso de um comando inexistente, a mensagem "Opção incorreta" deve ser impressa como saída. */
+
+
+function main(comandos) {
+    const nomes = [];
+    const saida = [];
+  
+    for (const cmd of comandos) {
+      const [acao, ...resto] = cmd;
+      const argumentos = resto.join(":");
+      const nome = argumentos.split(":")[0];
+  
+      switch (acao) {
+        case "1":
+          nomes.push(nome);
+          break;
+        case "2":
+          const novoNome = argumentos.split(":")[1];
+          const indice = nomes.indexOf(nome);
+          if (indice !== -1) {
+            nomes[indice] = novoNome;
+          }
+          break;
+        case "3":
+          const indiceExcluir = nomes.indexOf(nome);
+          if (indiceExcluir !== -1) {
+            nomes.splice(indiceExcluir, 1);
+          }
+          break;
+        default:
+          saida.push("Opção incorreta");
+      }
+  
+      saida.push([...nomes]);
+      saida.push("= = = = =");
+    }
+  
+    for (const linha of saida) {
+      console.log(linha);
+    }
+  }
+  
+  let comandos = prompt("Digite a lista de comandos. OBS: comandos devem ser separados por espaço e partes do comando por ':'");
+  let comandosClean = [];
+  comandos.split(" ")
+          .forEach(
+            c => comandosClean.push(c.split(":"))
+          );
+  main(comandosClean);

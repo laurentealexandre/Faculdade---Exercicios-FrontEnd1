@@ -1,0 +1,22 @@
+/* Crie uma função que recebe um vetor e um alvo e identifica se existe dois números que representam a soma alvo.
+
+O usuário deve digitar os números do vetor separados por espaço e, em um segundo momento, digitar o valor alvo
+
+A saída deve ser true se existe uma soma dos valores do vetor que resulta no valor alvo ou false caso contrário. */
+
+
+function somaNumerosIgualAlvo(vetor, alvo) {
+   for (let i = 0; i < vetor.length; i++) {
+     for (let j = i + 1; j < vetor.length; j++) {
+       if (vetor[i] + vetor[j] == alvo) {
+          return true;
+       }
+     }
+   }
+  return false;
+}
+
+var vetor = prompt("Digite o vetor separando números com espaços");
+vetor = vetor.split(" ").map(num => parseInt(num));
+var alvo = prompt("Digite o valor alvo");
+console.log(somaNumerosIgualAlvo(vetor, parseInt(alvo)));

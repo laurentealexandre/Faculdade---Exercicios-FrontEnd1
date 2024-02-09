@@ -1,0 +1,20 @@
+/* Crie uma função que recebe um número flutuante (float) não negativo arredondado para duas casas decimais, que denota a temperatura em Celsius.
+
+A função deve converter Celsius em Fahrenheit e retorná-lo com duas casas decimais.
+
+Observe que:
+Fahrenheit = Celsius * 1,80 + 32,00
+
+Valores inválidos devem retornar -1. */
+
+function converteCelsiusParaFahrenheit(celsius) {  
+  if (celsius >= 0 && celsius <= 1000) {  
+    const fahrenheit = (celsius * 1.8) + 32;
+    return fahrenheit.toFixed(2);
+  } else {
+  return  -1;
+  }
+}
+
+var celsius = prompt("Digite um número float representando graus Celsius para ser convertido em Fahrenheit");
+console.log(converteCelsiusParaFahrenheit(celsius));

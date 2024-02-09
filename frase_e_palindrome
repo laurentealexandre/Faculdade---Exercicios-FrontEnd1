@@ -1,0 +1,20 @@
+
+/* Crie uma função que checa se a frase passada pelo usuário é palíndromo. Uma palavra palíndroma é igual quando se lê de frente para trás ou de trás para frente. Por exemplo, a palavra Natan é um palíndroma.
+
+O usuário deve digitar a frase e o programa deve retornar true se a frase é palíndroma ou false caso contrário. A função deve filtrar os caracteres da frase aceitando apenas letras minúsculas. */
+
+
+function isPhrasePalindrome(frase) {
+  const fraseTratada = frase.toLowerCase().replace(/[^a-z]/g, '');
+
+  if (frase.trim() != "" && fraseTratada == ""){
+    return false;
+  }
+   
+  const fraseContrario = fraseTratada.split('').reverse().join('');  
+  return fraseTratada === fraseContrario;
+  
+}
+
+var frase = prompt("Digite a frase que deseja ver se é palindrome");
+console.log(isPhrasePalindrome(frase));

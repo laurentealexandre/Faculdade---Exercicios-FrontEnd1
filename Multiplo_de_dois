@@ -1,0 +1,14 @@
+
+/*Crie uma função que recebe um número inteiro como entrada e retorna true se o número é divisível por 2 ou false caso contrário. Altere apenas o lugar necessário.
+
+O usuário deve inserir apenas o número a ser testado.
+
+Seu código deve retornar apenas o booleano pedido.*/
+
+
+function isMultipleOfTwo(num) {
+  return num % 2 == 0 ; true
+}
+
+var num = prompt("Digite um número inteiro");
+console.log(isMultipleOfTwo(num));
